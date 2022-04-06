@@ -1,0 +1,93 @@
+前情回顾
+
+1. 数据库基本概念
+
+   为什么用数据库: 高效  自动化 降低冗余
+
+   * 数据库
+   * 数据库管理系统
+   * 数据库的分类 (关系  非关系  开源)
+   * 关系型数据库 : 表   字段   记录
+   * mysql 特点 : 开源  关系型  c/c++
+   * mysql 安装 : 安装   启动
+
+2. SQL
+
+   数据库
+
+   create database [db] charset=utf8;
+   show databases;
+   use [db];
+   select database();
+   drop database [db];
+
+   数据表
+
+   数据类型 :
+       数字  tinyint  int  float  bit
+
+       字符串  char  varchar  enum  set  text
+
+   字段约束 :
+       not null
+       default [val]
+       unsigned
+       primary key   auto_incement
+       comment [msg]
+
+   create table [tb] (col type 约束,...);
+   show tables;
+   desc [tb];
+   show create table [tb];
+   drop table [tb];
+
+   数据操作 (增删改查)
+
+     增加:  insert into [tb] (col,..) values (val,..)..;
+
+     查询:  select col,.. from [tb] [where..]
+
+练习 使用book表
+1. 将呐喊的价格修改为45元
+2. 增加一个字段出版时间 类型为 date 放在价格后面
+3. 修改所有老舍的作品出版时间为 2018-10-1
+4. 修改所有中国文学出版社出版的作为 出版时间为 2020-1-1
+5. 修改所有出版时间为Null的图书 出版时间为 2019-10-1
+6. 所有鲁迅的图书价格增加5元
+7. 删除所有价格超过70元或者不到40元的图书
+
+
+查找练习 高级查询
+1. 查找所有蜀国人信息，按照攻击力排名
+2. 将赵云攻击力设置为360，防御设置为70
+3. 吴国英雄攻击力超过300的改为300，最多改2个
+4. 查找攻击力超过200的魏国英雄名字和攻击力并显示为姓名， 攻击力
+5. 所有英雄按照攻击力降序排序，如果相同则按照防御生序排序
+6. 查找名字为3字的
+7. 查找攻击力为魏国最高攻击力的人还要高的蜀国英雄
+8. 找到魏国排名2-3名的英雄
+9. 查找所有女性角色中攻击力大于180的和男性中攻击力小于250的
+
+
+找出男性平均防御力大于50的国家中
+平均防御最大的国家
+显示出其国家和平均防御力
+
+select country as 国家,avg(defense) as 平均防御力
+from sanguo
+where gender="男"
+group by country
+having avg(defense) > 50
+order by avg(defense) desc
+limit 1;
+
+聚合练习
+
+1. 统计每位作家出版图书的平均价格
+2. 统计每个出版社出版图书数量
+3. 查看总共有多少个出版社
+4. 筛选出那些出版过超过50元图书的出版社，并按照其出版图书的平均价格降序排序
+5. 统计同一时间出版图书的最高价格和最低价格
+
+作业 : 1. 前两天基础语句总结
+      2. 练习 自己写一下

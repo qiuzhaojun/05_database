@@ -1,0 +1,75 @@
+前情回顾
+
+1. 数据的基础操作
+
+   update [tb] set col=val,... where ...
+
+   delete from [tb] where ...
+
+   alter table [tb] add/drop/modify/change
+
+2. 时间数据类型
+
+   date  time  datetime   now()
+
+3. 高级查询
+
+   模糊查询 :  like   %  _
+   重命名 :  as
+   排序 : order by
+   限制(分页) : limit  offset
+   联合查询: union  [all]
+   子查询 : from 后面
+           where 子句
+
+4. 聚合操作
+
+   聚合函数: sum()  max()  min()  avg() count()
+
+   聚合分组: group by [col]
+
+   聚合筛选: having
+
+   聚合去重: distinct
+
+   聚合运算
+
+ 5. 索引
+
+    什么是索引
+
+    功能 : 查找速度快
+
+    使用 : 数据量大,经常查找
+
+    分类 : 普通  唯一  主键
+
+    创建  删除  查看索引
+
+
+思考 :  微信信息存储
+
+姓名  年龄  电话  照片  内容
+时间  地点  评论  点赞
+
+练习: 将微信用户朋友圈表进行重新设计
+根据所学的关系模型将其合理化
+
+
+查询员工和部门表中 工资超过20000的员工
+
+部门  名字  工资
+
+作业: 1. 将book表拆分为三个数据表 分别存储
+         图书信息  作家信息   出版社信息
+
+         自行设定三则的属性和关系
+         画出E-R图 然后根据图创建数据表
+
+
+
+
+
+
+
+

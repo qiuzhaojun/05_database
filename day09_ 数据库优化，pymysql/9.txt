@@ -1,0 +1,67 @@
+前情回顾
+
+1.视图
+
+  作用: 简化复杂的查询操作
+        是数据更加安全
+        数据更加清晰
+
+  create [or replace] view as [select ....]
+
+  drop view [if exists] [view]
+
+2. 函数和存储过程
+
+   函数 : 有返回值   获取一个结果
+
+   存储过程: 没有返回值  注重过程执行
+
+   create function func(uid int,..)
+   returns [return_type]
+   begin
+      declare a int;
+      函数体
+      return ...;
+   end
+
+   create procedure proc(in uid int,...)
+   begin
+      存储过程语句
+   end
+
+   call proc()
+   delimiter $$
+
+   drop function/procedure  [name];
+
+3. 事务控制
+
+   事务: 一件事情从开始到结束
+
+   begin   commit  rollback
+
+   原子性   一致性  隔离性  持久性
+
+   隔离级别: 读未提交  读已提交   可重复读  串行化
+
+4. 数据库优化
+
+   * 数据库范式
+   * 数据库引擎
+   * 字段选择 (合适的情况下尽量选择占用空间小的)
+
+
+练习:  input输入一个学生的姓名,将该学生的成绩改为
+100分
+
+练习： 创建一个数据库 dict
+      创建一个数据表 words
+      id   word  mean
+
+      将dict.txt单词本中单词插入到该数据表
+
+
+作业 ： 1. 数据管理部分进行 函数 语句 知识点的真理
+       2. 练习没有做出来的 做一下
+
+
